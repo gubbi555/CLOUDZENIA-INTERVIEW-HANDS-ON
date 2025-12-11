@@ -1,0 +1,6 @@
+aws_region   = "us-east-1"
+project_name = "ecs-wordpress"
+environment  = "dev"
+domain_name  = "example.com"  # Replace with your domain
+db_username  = "wordpress_user"
+# db_password will be auto-generated securely

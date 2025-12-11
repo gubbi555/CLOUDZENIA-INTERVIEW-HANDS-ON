@@ -1,0 +1,35 @@
+{
+  "family": "ecs-wordpress-dev-microservice",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecs-wordpress-dev-ecs-task-execution",
+  "containerDefinitions": [
+    {
+      "name": "microservice",
+      "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/ecs-wordpress-microservice:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "3000"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ecs-wordpress-dev-microservice",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
