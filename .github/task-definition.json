@@ -4,11 +4,11 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecs-wordpress-dev-ecs-task-execution",
+  "executionRoleArn": "arn:aws:iam::982534371930:role/ecs-wordpress-dev-ecs-task-execution",
   "containerDefinitions": [
     {
       "name": "microservice",
-      "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/ecs-wordpress-microservice:latest",
+      "image": "982534371930.dkr.ecr.us-east-1.amazonaws.com/ecs-wordpress-microservice:latest",
       "portMappings": [
         {
           "containerPort": 3000,
