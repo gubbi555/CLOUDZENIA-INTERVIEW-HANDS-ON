@@ -23,7 +23,3 @@ output "microservice_target_group_arn" {
   value       = aws_lb_target_group.microservice.arn
 }
 
-output "certificate_arn" {
-  description = "SSL certificate ARN"
-  value       = aws_acm_certificate.main.arn
-}

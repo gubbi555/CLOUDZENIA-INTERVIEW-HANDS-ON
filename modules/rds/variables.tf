@@ -18,10 +18,7 @@ variable "private_subnet_ids" {
   type        = list(string)
 }
 
-variable "ecs_security_group_id" {
-  description = "ECS security group ID"
-  type        = string
-}
+
 
 variable "db_username" {
   description = "Database username"

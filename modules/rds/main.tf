@@ -14,10 +14,10 @@ resource "aws_security_group" "rds" {
   vpc_id      = var.vpc_id
 
   ingress {
-    from_port       = 3306
-    to_port         = 3306
-    protocol        = "tcp"
-    security_groups = [var.ecs_security_group_id]
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]  # Allow from VPC
   }
 
   egress {
@@ -77,8 +77,9 @@ resource "aws_db_instance" "wordpress" {
 
 # Random password for RDS
 resource "random_password" "db_password" {
-  length  = 16
-  special = true
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
 # IAM Role for RDS Enhanced Monitoring

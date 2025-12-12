@@ -10,12 +10,12 @@ output "alb_dns_name" {
 
 output "wordpress_url" {
   description = "WordPress URL"
-  value       = "https://wordpress.${var.domain_name}"
+  value       = "http://${module.alb.alb_dns_name}/"
 }
 
 output "microservice_url" {
   description = "Microservice URL"
-  value       = "https://microservice.${var.domain_name}"
+  value       = "http://${module.alb.alb_dns_name}/api/"
 }
 
 output "rds_endpoint" {
