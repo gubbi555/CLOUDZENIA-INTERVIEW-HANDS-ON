@@ -6,12 +6,13 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Hello from Microservice',
     timestamp: new Date().toISOString(),
-    service: 'nodejs-microservice'
+    service: 'nodejs-microservice',
+    environment: 'dev'
   });
 });
 
 app.get('/health', (req, res) => {
-  res.json({ status: 'healthy' });
+  res.json({ status: 'healthy', environment: 'dev' });
 });
 
 app.listen(port, '0.0.0.0', () => {
