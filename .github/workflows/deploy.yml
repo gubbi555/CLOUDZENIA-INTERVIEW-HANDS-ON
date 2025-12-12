@@ -2,10 +2,7 @@ name: Deploy Microservice to ECS
 
 on:
   push:
-    branches: [ main ]
-    paths: [ 'microservice/**' ]
-  pull_request:
-    branches: [ main ]
+    branches: [ main, dev ]
     paths: [ 'microservice/**' ]
 
 env:
