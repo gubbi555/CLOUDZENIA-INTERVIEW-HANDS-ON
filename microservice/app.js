@@ -11,6 +11,15 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api', (req, res) => {
+  res.json({
+    message: 'Hello from Microservice',
+    timestamp: new Date().toISOString(),
+    service: 'nodejs-microservice',
+    environment: 'dev'
+  });
+});
+
 app.get('/health', (req, res) => {
   res.json({ status: 'healthy', environment: 'dev' });
 });
